@@ -53,7 +53,7 @@ function handleclick(index)
     if(gameGrid[index]==="")
     {
         boxes[index].innerText = currentplayer;
-        gameGrid[index]=currentplayer;
+        gameGrid[index] = currentplayer;
         boxes[index].style.pointerEvents="none";
         swapTurn();
         wincheck();
@@ -96,14 +96,9 @@ function wincheck()
 
                 newgame.classList.add("active");
 
-                if(gameGrid[position[0]]==="X")
-                {
-                    ans="X";
-                }
-                else{
-                    ans="O";
-                }
-                gameinfo.innerText=`winnder is ${ans}`;
+                ans=gameGrid[position[0]]
+             
+                gameinfo.innerText=`winner is ${ans}`;
             }
             
 
@@ -116,6 +111,10 @@ function wincheck()
 }
 
 
+
+
+
+// this will check that all elements of grid has filled or not if filled then initiate the game
 function gridcheck()
 {
  for(i of gameGrid)
